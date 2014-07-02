@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+  <title>Recipes</title>
+  <style>
+    a:link{
+        color: SeaGreen;
+    }  </style>
+</head>
+<body>
+  <div style= "font-family: 'Shadows Into Light Two', cursive;
+      width: 600px; padding: 2px 50px 50px 50px; margin: 0px auto; background-color: #D2E4D2;">
+  <h1>{{page_title}}</h1>
+  <img src="{{picture[0]}}" alt="{{picture[1]}}" width=100%>
+  <h2>Ingredients:</h2>
+  <ul>
+    {%for ingredient in ingredients_list%}
+      {{ ingredient }}<br>
+    {%endfor%}
+  </ul>
+  <h2>Directions:</h2>
+  <ol>
+    {%for direction in directions_list%}
+      <li>{{direction}}</li>
+    {%endfor%}
+  </ol>
+  <h2>Inspiration and Resources:</h2>
+  {%for entity in inspiration_and_resources_list%}
+    {%if entity[0]==""%}
+      {{entity[1]}}
+    {%else%}
+      <a href="{{entity[0]}}">{{entity[1]}}</a>
+    {%endif%}
+  {%endfor%}
+  </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+  <title>Recipes</title>
+  <style>
+    a:link{
+        color: SeaGreen;
+    }
+  </style>
+</head>
+<body>
+    <div style= "font-family: 'Shadows Into Light Two', cursive;
+      width: 600px; padding: 2px 50px 50px 50px; margin: 0px auto; background-color: #D2E4D2;">
+  <h1>My Recipes</h1>
+  <ul>
+    {% for item in recipe_page_list %}
+      <li><a href="{{ item[0] }}">{{ item[1] }}</a></li>
+    {% endfor %}
+  </ul>
+  </div>
+</body>
+</html>
+
